@@ -1,14 +1,30 @@
-import classes from './LanguageSwitcher.module.scss';
 import cn from 'classnames';
-import React, { useCallback } from 'react';
-import RuFlag from '@/shared/assets/img/svg/ru_flag.svg?react';
-import UsFlag from '@/shared/assets/img/svg/us_flag.svg?react';
+import React from 'react';
 import { Box, IconButton, Menu, MenuItem } from '@mui/material';
+import { Translate as TranslateIcon } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 
 interface ILanguageSwitcherProps {
     className?: string;
 }
+
+type LANGUAGES_VALUE = 'ru' | 'en';
+
+interface ILanguages {
+    value: LANGUAGES_VALUE;
+    title: string;
+}
+
+const LANGUAGES: ILanguages[] = [
+    {
+        value: 'ru',
+        title: 'Русский',
+    },
+    {
+        value: 'en',
+        title: 'English',
+    }
+];
 
 export const LanguageSwitcher: React.FC<ILanguageSwitcherProps> = (props) => {
     const {
@@ -30,53 +46,39 @@ export const LanguageSwitcher: React.FC<ILanguageSwitcherProps> = (props) => {
         setAnchorEl( null );
     };
 
-    const onToggleLanguage = async () => {
-        await i18n.changeLanguage( i18n.language === 'ru' ? 'en' : 'ru' );
-        handleClose();
-    };
+    const onChangeLanguage = async (lang: LANGUAGES_VALUE) => {
+        if (i18n.language !== lang) {
+            await i18n.changeLanguage( lang );
+            handleClose();
 
-    const renderFlag = useCallback( (reverse: boolean = false) => {
-        if (reverse) {
-            return i18n.language === 'ru'
-                ? <UsFlag/>
-                : <RuFlag/>;
+            return;
         }
-
-        return i18n.language === 'ru'
-            ? <RuFlag/>
-            : <UsFlag/>;
-    }, [ i18n.language ] );
+    };
 
     return (
         <Box className={ cn( '', {}, [ className ] ) }>
             <IconButton
-                className={ classes.switcherButton }
                 id="language-switch-button"
                 aria-controls={ open ? 'language-switch-list' : undefined }
                 aria-haspopup="true"
                 aria-expanded={ open ? 'true' : undefined }
                 onClick={ handleClick }
             >
-                { renderFlag() }
+                <TranslateIcon sx={ { color: '#fff' } }/>
             </IconButton>
             <Menu
-                classes={{
-                    paper: classes.switcherListPaper,
-                    list: classes.switcherList,
-                }}
                 id="language-switch-list"
                 anchorEl={ anchorEl }
                 open={ open }
                 onClose={ handleClose }
                 aria-labelledby="language-switch-button"
             >
-                <MenuItem onClick={ onToggleLanguage }>
-                    <IconButton
-                        className={ classes.switcherButton }
-                    >
-                        { renderFlag( true ) }
-                    </IconButton>
-                </MenuItem>
+                { LANGUAGES.map( (item) => (
+                    <MenuItem key={ `language-${ item.value }` }
+                        onClick={ () => onChangeLanguage( item.value ) }>
+                        { item.title }
+                    </MenuItem>
+                ) ) }
             </Menu>
         </Box>
     );
