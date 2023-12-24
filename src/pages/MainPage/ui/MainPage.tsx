@@ -1,9 +1,10 @@
 import React from 'react';
+import { DialogConfirmationComponentVariantSwitcher } from '@/widgets/DialogConfirmationComponentVariantSwitcher';
 
 const MainPage: React.FC = () => {
     return (
         <div>
-            asdasd
+            <DialogConfirmationComponentVariantSwitcher/>
         </div>
     );
 };

@@ -1,1 +1,5 @@
-{}
+{
+  "package_variant_component": "Пакетный",
+  "dialog_confirmation_component_variant_title": "Вариант диалогового окна",
+  "custom_variant_component": "Собственный"
+}

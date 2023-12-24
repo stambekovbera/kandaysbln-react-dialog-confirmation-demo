@@ -1,1 +1,5 @@
-{}
+{
+  "package_variant_component": "Package",
+  "dialog_confirmation_component_variant_title": "Dialog Confirmation Component Variant",
+  "custom_variant_component": "Custom"
+}
