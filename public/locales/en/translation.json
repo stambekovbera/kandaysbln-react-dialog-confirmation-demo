@@ -1,5 +1,12 @@
 {
   "package_variant_component": "Package",
   "dialog_confirmation_component_variant_title": "Dialog Confirmation Component Variant",
-  "custom_variant_component": "Custom"
+  "custom_variant_component": "Custom",
+  "open_button_text": "Open",
+  "dialog_confirmation_title": "Confirmation",
+  "dialog_confirmation_cancel_button_text": "Cancel",
+  "dialog_confirmation_accept_button_text": "Confirm",
+  "dialog_confirmation_description": "Are you sure you want to confirm the action?",
+  "dialog_confirmation_confirm_text": "You have confirmed the action!",
+  "dialog_confirmation_cancel_text": "You have canceled the action!"
 }
