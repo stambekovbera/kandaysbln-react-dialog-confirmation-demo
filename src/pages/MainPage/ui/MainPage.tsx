@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { DialogConfirmationComponentVariantSwitcher } from '@/widgets/DialogConfirmationComponentVariantSwitcher';
 import { DialogConfirmationOpenButton } from '@/widgets/DialogConfirmationOpenButton';
+import { LinkToGuide } from '@/widgets/LinkToGuide';
 
 const MainPage: React.FC = () => {
     return (
@@ -11,10 +12,13 @@ const MainPage: React.FC = () => {
                 mt={ 2 }
                 sx={ {
                     display: 'flex',
-                    justifyContent: 'center'
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '20px',
                 } }
             >
                 <DialogConfirmationOpenButton/>
+                <LinkToGuide/>
             </Box>
         </Box>
     );

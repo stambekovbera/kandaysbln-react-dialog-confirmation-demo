@@ -8,5 +8,7 @@
   "dialog_confirmation_accept_button_text": "Подтвердить",
   "dialog_confirmation_description": "Вы действительно хотите подтвердить действие?",
   "dialog_confirmation_confirm_text": "Вы подтвердили действие!",
-  "dialog_confirmation_cancel_text": "Вы отменили действие!"
+  "dialog_confirmation_cancel_text": "Вы отменили действие!",
+  "guide_link_title": "Документация",
+  "guide_link": "https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation/tree/master/documentation/ru"
 }

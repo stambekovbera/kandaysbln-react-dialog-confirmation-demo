@@ -8,5 +8,7 @@
   "dialog_confirmation_accept_button_text": "Confirm",
   "dialog_confirmation_description": "Are you sure you want to confirm the action?",
   "dialog_confirmation_confirm_text": "You have confirmed the action!",
-  "dialog_confirmation_cancel_text": "You have canceled the action!"
+  "dialog_confirmation_cancel_text": "You have canceled the action!",
+  "guide_link_title": "Guide",
+  "guide_link": "https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation"
 }
