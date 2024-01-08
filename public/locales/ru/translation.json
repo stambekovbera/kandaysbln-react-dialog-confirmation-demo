@@ -2,7 +2,7 @@
   "package_variant_component": "Пакетный",
   "dialog_confirmation_component_variant_title": "Вариант диалогового окна",
   "custom_variant_component": "Собственный",
-  "open_button_text": "Открыть",
+  "open_button_text": "Открыть диалоговое окно",
   "dialog_confirmation_title": "Подтверждение",
   "dialog_confirmation_cancel_button_text": "Отмена",
   "dialog_confirmation_accept_button_text": "Подтвердить",
